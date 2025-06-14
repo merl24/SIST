@@ -1,0 +1,22 @@
+<h2>Dashboard RRHH</h2>
+
+<h4>Contratos por Vencer</h4>
+<ul>
+    {% for c in contratos_por_vencer %}
+        <li>{{ c.trabajador }} - Fin: {{ c.fecha_fin }}</li>
+    {% endfor %}
+</ul>
+
+<h4>Exámenes Vencidos</h4>
+<ul>
+    {% for e in examenes_vencidos %}
+        <li>{{ e.trabajador }} - Venció: {{ e.fecha_vencimiento }}</li>
+    {% endfor %}
+</ul>
+
+<h4>Trabajadores Activos</h4>
+<ul>
+    {% for t in trabajadores %}
+        <li>{{ t.nombres }} {{ t.apellidos }}</li>
+    {% endfor %}
+</ul>

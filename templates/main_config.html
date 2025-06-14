@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>webSysERP | Intranet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="webSysERP | ERP" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/styles/overlayscrollbars.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="../static/css/adminlte.css" />
+</head>
+
+<!--begin::Body-->
+
+<body class="layout-fixed sidebar-expand-lg sidebar-mini sidebar-collapse bg-body-tertiary">
+  <div class="app-wrapper">
+    <nav class="app-header navbar navbar-expand bg-body">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
+              <i class="bi bi-list"></i>
+            </a>
+          </li>
+          <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Inicio</a></li>
+          <li class="nav-item d-none d-md-block"><a href="#" class="nav-link">Contacto</a></li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <!--CAMPANA DE NOTIFICACIONES-->
+          <li class="nav-item dropdown">
+            <a class="nav-link" data-bs-toggle="dropdown" href="#">
+              <i class="bi bi-bell-fill"></i>
+              <span class="navbar-badge badge text-bg-warning">15</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+              <span class="dropdown-item dropdown-header">15 Notifications</span>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item">
+                <i class="bi bi-envelope me-2"></i> 4 new messages
+                <span class="float-end text-secondary fs-7">3 mins</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item">
+                <i class="bi bi-people-fill me-2"></i> 8 friend requests
+                <span class="float-end text-secondary fs-7">12 hours</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item">
+                <i class="bi bi-file-earmark-fill me-2"></i> 3 new reports
+                <span class="float-end text-secondary fs-7">2 days</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item dropdown-footer"> See All Notifications </a>
+            </div>
+          </li>
+          <!--CAMPANA DE NOTIFICACIONES-->
+
+          <!--CONTROLADOR: PANTALLA FULLSCREEN-->
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-lte-toggle="fullscreen">
+              <i data-lte-icon="maximize" class="bi bi-arrows-fullscreen"></i>
+              <i data-lte-icon="minimize" class="bi bi-fullscreen-exit" style="display: none"></i>
+            </a>
+          </li>
+          <!--CONTROLADOR: PANTALLA FULLSCREEN-->
+
+          <!--CONTROLADOR: MENU DE USUARIO-->
+          <li class="nav-item dropdown user-menu">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+              <img src="../static/images/user2-160x160.jpg" class="user-image rounded-circle shadow" alt="User Image" />
+              <span class="d-none d-md-inline">{Alexander Pierce}</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+              <!--DATOS DE USUARIO-->
+              <li class="user-header text-bg-primary">
+                <img src="../static/images/user2-160x160.jpg" class="rounded-circle shadow" alt="User Image" />
+                <p>
+                  {usuario} - {Cargo}
+                  <small>Miembro desde el {año}</small>
+                </p>
+              </li>
+              <!--CUERPO DE CAJA DE USUARIO-->
+              <li class="user-body">
+                <!--CONFIG DE FILAS-->
+                <div class="row">
+                  <div class="col-6 text-center"><a href="#">Followers</a></div>
+                  <div class="col-6 text-center"><a href="#">Sales</a></div>
+                </div>
+              </li>
+
+              <!--FOOTER DE CAJA DE USUARIO-->
+              <li class="user-footer">
+                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <a href="#" class="btn btn-default btn-flat float-end">Sign out</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--SIDEBAR-->
+
+    <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+      <div class="sidebar-brand"><a href="../index.html" class="brand-link">
+          <img src="../static/images/webSysLogo-3dx.png" alt="webSysERP Logo" class="brand-image opacity-75 shadow" />
+          <span class="brand-text fw-light">webSysERP</span></a>
+      </div>
+      <div class="sidebar-wrapper">
+        <nav class="mt-2">
+          <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
+            <li class="nav-item">
+              <a href="#" class="nav-link"><i class="nav-icon bi bi-speedometer"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <!--INICIO MENU: RRHH-->
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon bi bi-person-fill"></i>
+                <p>RR.HH.<i class="nav-arrow bi bi-chevron-right"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="../widgets/small-box.html" class="nav-link">
+                    <i class="nav-icon bi bi-circle"></i>
+                    <p>Registro de personal</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../widgets/info-box.html" class="nav-link">
+                    <i class="nav-icon bi bi-circle"></i>
+                    <p>info Box</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../widgets/cards.html" class="nav-link">
+                    <i class="nav-icon bi bi-circle"></i>
+                    <p>Cards</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!--CIERRE MENU: RRHH-->
+
+            <!--INICIO MENU: ALMACEN-->
+            <li class="nav-item">
+              <a href="#" class="nav-link"><i class="nav-icon bi bi-box-seam-fill"></i>
+                <p>ALMACEN<i class="nav-arrow bi bi-chevron-right"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="../widgets/small-box.html" class="nav-link">
+                    <i class="nav-icon bi bi-circle"></i>
+                    <p>Small Box</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../widgets/info-box.html" class="nav-link">
+                    <i class="nav-icon bi bi-circle"></i>
+                    <p>info Box</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../widgets/cards.html" class="nav-link">
+                    <i class="nav-icon bi bi-circle"></i>
+                    <p>Cards</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!--CIERRE MENU: ALMACEN-->
+
+            <!--INICIO MENU: LOGISTICA-->
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon bi bi-boxes"></i>
+                <p>LOGISTICA<i class="nav-arrow bi bi-chevron-right"></i></p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item"><a href="../widgets/small-box.html" class="nav-link">
+                    <i class="nav-icon bi bi-circle"></i>
+                    <p>Small Box</p>
+                  </a></li>
+                <li class="nav-item">
+                  <a href="../widgets/info-box.html" class="nav-link"><i class="nav-icon bi bi-circle"></i>
+                    <p>info Box</p>
+                  </a>
+                </li>
+                <li class="nav-item"><a href="../widgets/cards.html" class="nav-link">
+                    <i class="nav-icon bi bi-circle"></i>
+                    <p>Cards</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!--CIERRE MENU: LOGISTICA-->
+
+            <li class="nav-header">FORMULARIOS GENERALES</li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon bi bi-circle-fill"></i>
+                <p>Level 1</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <!--FIN::SIDEBAR-->
+    <!--INICIO::CUERPO MAIN-->
+    <main class="app-main">
+      <div class="app-content-header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">
+              <h3 class="mb-0">Enunciado bievenida en pagina</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--begin::App Content-->
+      <div class="app-content">
+        <div class="container-fluid">
+          <div class="row">
+            <!-- CAJA DE TEXTO Y CONTENIDO DE VISTA PRINCIPAL -->
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">Titulo de contenido base</h3>
+                  <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse" title="Collapse">
+                      <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
+                      <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-lte-toggle="card-remove" title="Remove">
+                      <i class="bi bi-x-lg"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body">
+                    <p>Contenido 1</p >
+                    <p>Contenido 2</p >
+                    <p>Paragraph for reference, paragraph for reference, paragraph for reference,
+                      paragraph for reference, paragraph for reference, paragraph for reference 
+                      das dasd ad da dasd ada ds dasd das 
+                      paragraph for reference, paragraph for reference, paragraph for reference.</p >
+                  </div>
+                <div class="card-footer">Pie de pagina de contenido</div>
+              </div>
+            </div>
+          <!--FIN::CAJA DE TEXTO Y CONTENIDO DE VISTA PRINCIPAL-->
+        </div>
+      </div>
+    </main>
+    <footer class="app-footer">
+      <div class="float-end d-none d-sm-inline">¿Que deseas hacer?</div>
+      <strong>Copyright &copy; 2014-2024&nbsp;
+        <a href="https://adminlte.io" class="text-decoration-none">webSysERP.io</a>.
+      </strong>Todos los derechos reservados.
+    </footer>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+<script src="../static/js/adminlte.js"></script>
+<script src="../static/js/wrapper.js"></script>
+
+  <script>
+    const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
+    const Default = {
+      scrollbarTheme: 'os-theme-light',
+      scrollbarAutoHide: 'leave',
+      scrollbarClickScroll: true,
+    };
+    document.addEventListener('DOMContentLoaded', function () {
+      const sidebarWrapper = document.querySelector(SELECTOR_SIDEBAR_WRAPPER);
+      if (sidebarWrapper && typeof OverlayScrollbarsGlobal?.OverlayScrollbars !== 'undefined') {
+        OverlayScrollbarsGlobal.OverlayScrollbars(sidebarWrapper, {
+          scrollbars: {
+            theme: Default.scrollbarTheme,
+            autoHide: Default.scrollbarAutoHide,
+            clickScroll: Default.scrollbarClickScroll,
+          },
+        });
+      }
+    });
+  </script>
+  <!--end::OverlayScrollbars Configure-->
+  <!--end::Script-->
+</body>
+</html>

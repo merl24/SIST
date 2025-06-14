@@ -1,0 +1,44 @@
+<!-- templates/rrhh/lista_postulantes.html -->
+{% extends "base.html" %}
+{% block content %}
+<h2>Lista de Postulantes</h2>
+
+<div>
+    <a href="?">Todos</a> |
+    <a href="?estado=evaluacion">Evaluación</a> |
+    <a href="?estado=contratado">Contratado</a> |
+    <a href="?estado=rechazado">Rechazado</a>
+</div>
+
+<table border="1">
+    <thead>
+        <tr>
+        <th>Nombre</th>
+        <th>DNI</th>
+        <th>Email</th>
+        <th>Estado</th>
+        <th>CV</th>
+        <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in postulantes %}
+        <tr>
+            <td>{{ p.nombres }} {{ p.apellidos }}</td>
+            <td>{{ p.dni }}</td>
+            <td>{{ p.email }}</td>
+            <td>{{ p.get_estado_display }}</td>
+            <td><a href="{{ p.cv_pdf.url }}">Descargar</a></td>
+            <td>
+                <a href="{% url 'rrhh:cambiar_estado' p.id 'evaluacion' %}">Evaluación</a> |
+                <a href="{% url 'rrhh:cambiar_estado' p.id 'contratado' %}">Contratar</a> |
+                <a href="{% url 'rrhh:cambiar_estado' p.id 'rechazado' %}">Rechazar</a>
+            </td>
+            <td>
+                <a href="{% url 'rrhh:ficha_trabajador' postulante.id %}" class="btn btn-sm btn-outline-primary">Ver Ficha</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

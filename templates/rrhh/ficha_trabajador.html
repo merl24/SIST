@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+    <h2 class="mb-4">Ficha del Trabajador</h2>
+
+    <div class="card mb-4">
+        <div class="card-body">
+        <h4>{{ trabajador.nombres }} {{ trabajador.apellidos }}</h4>
+        <p><strong>DNI:</strong> {{ trabajador.dni }}</p>
+        <p><strong>Email:</strong> {{ trabajador.email }}</p>
+        <p><strong>Dirección:</strong> {{ trabajador.direccion }}</p>
+        {% if trabajador.cv_pdf %}
+            <p><strong>CV:</strong> <a href="{{ trabajador.cv_pdf.url }}" target="_blank">Ver PDF</a></p>
+        {% endif %}
+        </div>
+    </div>
+
+    <form method="POST" class="row g-4">
+        {% csrf_token %}
+
+        <div class="col-12 col-md-6">
+        <div class="card h-100">
+            <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Contrato</h5>
+            </div>
+            <div class="card-body">
+            {{ contrato_form.as_p }}
+            </div>
+        </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+        <div class="card h-100">
+            <div class="card-header bg-success text-white">
+            <h5 class="mb-0">Examen Médico Ocupacional</h5>
+            </div>
+            <div class="card-body">
+            {{ examen_form.as_p }}
+            </div>
+        </div>
+        </div>
+
+        <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-warning text-dark">
+            <h5 class="mb-0">Seguro SCTR</h5>
+            </div>
+            <div class="card-body">
+            {{ sctr_form.as_p }}
+            </div>
+        </div>
+        </div>
+
+        <div class="col-12 text-end">
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        <a href="{% url 'rrhh:lista_postulantes' %}" class="btn btn-secondary">Volver</a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+<h2>Detalle de {{ postulante.nombres }} {{ postulante.apellidos }}</h2>
+
+<ul>
+    <li>DNI: {{ postulante.dni }}</li>
+    <li>Email: {{ postulante.email }}</li>
+    <li>Dirección: {{ postulante.direccion }}</li>
+    <li>CV: <a href="{{ postulante.cv_pdf.url }}">Descargar CV</a></li>
+</ul>
+
+<h3>Historial Laboral</h3>
+<ul>
+    {% for h in historial %}
+        <li>{{ h.empresa }} - {{ h.cargo }} ({{ h.fecha_inicio }} - {{ h.fecha_fin }})</li>
+    {% endfor %}
+    </ul>
+
+    <form action="{% url 'rrhh:trasladar_postulante' postulante.id %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Contratar / Trasladar a Trabajador</button>
+</form>

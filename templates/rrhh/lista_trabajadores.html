@@ -1,0 +1,10 @@
+<h2>Trabajadores Contratados</h2>
+    <table>
+        <tr><th>Nombre</th><th>DNI</th></tr>
+        {% for t in trabajadores %}
+        <tr>
+            <td>{{ t.nombres }} {{ t.apellidos }}</td>
+            <td>{{ t.dni }}</td>
+        </tr>
+    {% endfor %}
+</table>
